@@ -74,11 +74,11 @@ Test Maker MCP でよくある問題と対処法。
 **対処**: 数式とタグを別に分ける。
 
 ```markdown
-# NG
-$S = \pi r^2$ において半径が<question correct="3" />のとき。
+# NG（数式デリミタの内側にタグを入れている）
+$S = \pi r^2, r = <question correct="3" />$ のとき。
 
 # OK（数式とタグを分離）
-$S = \pi r^2$ と表される式で、半径が<question correct="3" />のときを考える。
+$S = \pi r^2$ で半径が <question correct="3" /> のとき。
 ```
 
 ---
