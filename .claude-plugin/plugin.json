@@ -1,0 +1,21 @@
+{
+  "name": "test-maker",
+  "version": "0.1.0",
+  "description": "Create fill-in-the-blank and multiple-choice tests on Test Maker (test-maker.app) via MCP. Drive your AI agent to author quizzes with a single prompt.",
+  "author": {
+    "name": "TeXmeijin",
+    "url": "https://www.test-maker.app/"
+  },
+  "homepage": "https://www.test-maker.app/",
+  "repository": "https://github.com/TeXmeijin/test-maker-skill",
+  "license": "MIT",
+  "keywords": [
+    "test-maker",
+    "mcp",
+    "education",
+    "quiz",
+    "fill-in-the-blank",
+    "exam",
+    "japanese"
+  ]
+}
