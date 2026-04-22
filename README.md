@@ -62,10 +62,11 @@ MCP サーバー — `.cursor/mcp.json` または設定画面の MCP Servers に
 スキル（任意）:
 
 ```bash
-# CLI でインストール（GitHub CLI 2026-04 以降）
+# CLI でインストール（gh v2.90.0 以降が必要 / 現時点は public preview）
 gh skill install TeXmeijin/test-maker-skill test-maker --agent cursor
 
 # または GUI: Settings → Rules → Add Rule → Remote Rule (GitHub)
+# または手動: skills/test-maker/ を ~/.cursor/skills/ や ~/.agents/skills/ にコピー
 ```
 
 ### Claude Desktop
@@ -95,7 +96,13 @@ url = "https://api.test-maker.app/mcp"
 スキル（任意）:
 
 ```bash
+# gh v2.90.0 以降が必要（public preview）
 gh skill install TeXmeijin/test-maker-skill test-maker --agent codex
+
+# 手動で入れる場合:
+# git clone https://github.com/TeXmeijin/test-maker-skill.git /tmp/tms && \
+#   mkdir -p ~/.agents/skills && \
+#   cp -r /tmp/tms/skills/test-maker ~/.agents/skills/test-maker
 ```
 
 ### その他の MCP クライアント
@@ -104,7 +111,7 @@ gh skill install TeXmeijin/test-maker-skill test-maker --agent codex
 - Transport: Streamable HTTP
 - Auth: OAuth 2.1（PKCE + Dynamic Client Registration 対応）
 
-**スキルについて**: このリポジトリのスキルは [Agent Skills](https://agentskills.io) 仕様（SKILL.md ベース）に準拠。Cursor / Codex CLI / Gemini CLI / Copilot など 30 超のクライアントが `.agents/skills/` または `~/.agents/skills/` を読むので、`skills/test-maker/` ディレクトリをそこに置けば動く。クロスエージェントで一括管理するなら [`gh skill`](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/) が便利（`--agent claude-code|cursor|codex|copilot|gemini-cli|antigravity` で対象指定）。
+**スキルについて**: このリポジトリのスキルは [Agent Skills](https://agentskills.io) 仕様（SKILL.md ベース）に準拠。Cursor / Codex CLI / Gemini CLI / Copilot など 30 超のクライアントが `.agents/skills/` または `~/.agents/skills/` を読むので、`skills/test-maker/` ディレクトリをそこに置けば動く。クロスエージェントで一括管理したいなら [`gh skill`](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/)（gh v2.90.0 以降・public preview）で `--agent claude-code|cursor|codex|copilot|gemini-cli|antigravity` を指定してインストールできる。
 
 ---
 
